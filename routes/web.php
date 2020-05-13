@@ -18,11 +18,17 @@ use Illuminate\Support\Facades\Auth;
 // Route::post('login', 'AuthController@login');
 
 
-Route::middleware('auth:api')->group(function () {
+// Route::middleware('auth:api')->group(function () {
 
-  Route::get('user/{userId}/detail', 'UserController@show');
-});
+//     Route::get('user/{userId}/detail', 'UserController@show');
+// });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/post', 'PostController@all');
+
+// Route::get('/post/'.{$postId}, 'PostController@single');
+
+Route::get('/', 'HomeController@index')->name('index');
