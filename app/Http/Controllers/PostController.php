@@ -17,7 +17,7 @@ class PostController extends Controller
     }
     
     public function single($post_id) {
-        
+    // public function show(Post $post_id)     from ABRAM 
         $Post = Post::with(['comments', 'user'])->where('id', $post_id)->get();
         return response()->json([ 
             'post' => $Post

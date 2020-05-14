@@ -17,12 +17,12 @@ use Illuminate\Support\Facades\Auth;
 // Route::post('register', 'AuthController@register');
 // Route::post('login', 'AuthController@login');
 
-
+// removed to prevent from needing PW. Didn't work.
 // Route::middleware('auth:api')->group(function () {
 
-//     Route::get('user/{userId}/detail', 'UserController@show');
-// });
-
+    // });
+    
+Route::get('user/{userId}/detail', 'UserController@show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
