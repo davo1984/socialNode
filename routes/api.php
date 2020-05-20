@@ -16,7 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/register', 'AuthController@register');
 Route::post('/login', 'AuthController@login');
+Route::get('/post', 'PostController@all');
+Route::get('/post/{post_id}', 'PostController@single');
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
+Route::group(['middleware' => 'auth:api'], function(){
+    Route::post('/createPost', 'PostController@create');
+    Route::post('/createComment', 'CommentController@create');
+});
