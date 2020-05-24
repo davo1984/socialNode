@@ -23,8 +23,8 @@ Route::get('/post/{post_id}', 'PostController@single');
 //     return $request->user();
 // });
 
-Route::group(['middleware' => 'auth:api'], function(){
+// Route::group(['middleware' => 'auth:api'], function(){
     Route::get('/logout', 'AuthController@logout');
     Route::post('/createPost', 'PostController@create');
     Route::post('/createComment', 'CommentController@create');
-});
+// });
